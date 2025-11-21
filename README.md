@@ -5,8 +5,7 @@
 ![DataAnalysis](https://img.shields.io/badge/Skill-Financial%20Analytics-green)
 ![Status](https://img.shields.io/badge/Status-Completed-brightgreen)
 
-This project builds an end-to-end financial analytics pipeline using SQL in Google BigQuery.  
-It combines sales, product, and shipping datasets to compute product margins, operational costs, and monthly profitability insights for structured financial monitoring.
+This project builds an end-to-end financial analytics pipeline using SQL in Google BigQuery, transforming raw transactional data into daily and monthly profitability insights.
 
 ---
 
@@ -24,8 +23,8 @@ It combines sales, product, and shipping datasets to compute product margins, op
 - Aggregated sales at order level to avoid duplication  
 - Built daily financial KPIs (`gwz_finance_day`)  
 - Built monthly profitability KPIs (`gwz_finance_ads_month`)  
-- Produced revenue, margin, and ads impact insights across July–September  
-- Organized SQL scripts into clean analysis stages  
+- Analyzed revenue, margin trends, and advertising impact for July–September  
+- Structured SQL scripts into a clean, modular pipeline  
 
 ---
 
@@ -36,7 +35,7 @@ It combines sales, product, and shipping datasets to compute product margins, op
 - SQL  
 
 **Techniques:**  
-- LEFT / RIGHT / INNER JOINs  
+- LEFT / RIGHT / INNER JOIN operations  
 - Primary key validation  
 - NULL checks  
 - Daily & monthly aggregation  
@@ -54,28 +53,28 @@ It combines sales, product, and shipping datasets to compute product margins, op
   - higher logistics cost  
   - increased shipping expenses  
   - significant advertising spend  
-- July was the most profitable month  
-- August showed stable demand but higher costs  
-- September displayed the lowest profitability due to rising expenses  
-- Operational margin analysis highlighted cost drivers clearly  
-- Monthly KPI tracking showed durable demand but stressed margins  
+- **July** was the most profitable month  
+- **August** saw stable demand but early cost pressure  
+- **September** had the lowest profitability due to increased cost load  
+- Operational margin analysis highlighted clear cost drivers  
+- Monthly KPIs helped track demand vs. cost imbalance  
 
 ---
 
 ## 📌 Final Results
 
 - **July** delivered the strongest profit margin and best operational efficiency  
-- **August** maintained strong demand but showed early cost pressure  
-- **September** had the lowest profitability, driven by rising operational and advertising costs  
-- Shipping & logistics proved to be critical factors in margin compression  
-- Monthly KPIs provided a reliable structure for finance teams to monitor profitability shifts  
+- **August** maintained strong demand with rising cost pressure  
+- **September** showed the weakest profitability due to operational + advertising cost increases  
+- Shipping & logistics were the largest contributors to margin compression  
+- Monthly KPIs provided strong visibility into financial performance trends  
 
 ---
 
 ## 🧾 Conclusion
 
-This SQL project demonstrates how raw transactional data can be turned into a structured profitability monitoring system.  
-The pipeline supports business teams by revealing:
+This SQL project demonstrates how raw transactional data can be transformed into a structured financial intelligence system.  
+The pipeline gives clear visibility into:
 
 - revenue trends  
 - cost fluctuations  
@@ -83,9 +82,19 @@ The pipeline supports business teams by revealing:
 - operational efficiency  
 - advertising cost impact  
 
-It provides a clear financial overview and helps guide strategic decisions around pricing, cost optimization, and budget allocation.
+These insights support data-driven decisions for pricing, cost optimization, and budget allocation.
 
 ---
+
+## 📁 Project Structure
+
+- `01_sales_product_join.sql` → Join sales with product and compute purchase_cost & margin  
+- `02_sales_margin_tests.sql` → Primary key and purchase_price NOT NULL tests  
+- `03_orders_aggregation.sql` → Aggregate sales to order level (gwz_orders)  
+- `04_shipping_join_operational_margin.sql` → Join shipping data + compute operational_margin  
+- `05_finance_day_kpis.sql` → Daily KPI calculation (gwz_finance_day)  
+- `06_finance_month_kpis.sql` → Monthly KPI calculation (gwz_finance_ads_month)  
+
 ---
 
 ## 🚀 How to Run This Project
@@ -103,11 +112,11 @@ It provides a clear financial overview and helps guide strategic decisions aroun
    4. `04_shipping_join_operational_margin.sql`
    5. `05_finance_day_kpis.sql`
    6. `06_finance_month_kpis.sql`
-5. Use the final tables (`gwz_finance_day`, `gwz_finance_ads_month`) for reporting, dashboards, or further analysis.
+5. Use the final tables (`gwz_finance_day`, `gwz_finance_ads_month`) for reporting, dashboards, further analysis, or visualization tools.
+
+---
 
 ## 🔗 SQL Files
-
-All SQL analysis is broken down into the following steps:
 
 - `01_sales_product_join.sql`  
 - `02_sales_margin_tests.sql`  
@@ -123,4 +132,3 @@ All SQL analysis is broken down into the following steps:
 `#SQL` `#BigQuery` `#FinancialAnalytics`  
 `#KPIs` `#ProfitabilityAnalysis` `#DataEngineering`  
 `#EcommerceAnalytics` `#MarginAnalysis` `#SQLPipeline`
-
