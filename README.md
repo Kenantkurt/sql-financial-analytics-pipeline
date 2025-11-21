@@ -86,6 +86,24 @@ The pipeline supports business teams by revealing:
 It provides a clear financial overview and helps guide strategic decisions around pricing, cost optimization, and budget allocation.
 
 ---
+---
+
+## 🚀 How to Run This Project
+
+1. Open **Google BigQuery** in your GCP project  
+2. Create a dataset named `course16` in the **eu (multi-region in European Union)** location  
+3. Import the following tables into `course16`:
+   - `gwz_product`
+   - `gwz_sales`
+   - `gwz_ship`
+4. Run the SQL files in this order:
+   1. `01_sales_product_join.sql`
+   2. `02_sales_margin_tests.sql`
+   3. `03_orders_aggregation.sql`
+   4. `04_shipping_join_operational_margin.sql`
+   5. `05_finance_day_kpis.sql`
+   6. `06_finance_month_kpis.sql`
+5. Use the final tables (`gwz_finance_day`, `gwz_finance_ads_month`) for reporting, dashboards, or further analysis.
 
 ## 🔗 SQL Files
 
